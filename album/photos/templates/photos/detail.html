@@ -1,0 +1,19 @@
+{% extends 'photos/base.html' %}
+{% block title %} {{photo.title}} {% endblock %}
+{% block content %}
+<div class="container mt-5" >
+  <div class="row justify-content-center">
+    <div class="col-10">
+        <div class="card">
+            <img src="{{photo.image.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4 class="card-title">Pic name: {{photo.title}}</h4>
+              <p class="card-text">Category: {{photo.category}}</p>
+            <p class="card-text">{{photo.description}}</p>
+              <h5>{{photo.date}}</h5>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

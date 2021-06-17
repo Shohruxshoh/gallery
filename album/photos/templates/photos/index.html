@@ -1,0 +1,24 @@
+{% extends 'photos/base.html' %}
+{% load static %}
+{% block title %} Gallery {% endblock %}
+{% block content %}
+<div class="container mt-5" >
+  <div class="row">
+       {% for photo in photos %}
+    <div class="col-4">
+            <div class="card">
+                <img src="{{photo.image.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h4 class="card-title">Pic name: {{photo.title}}</h4>
+                <p class="card-text">Category: {{photo.category}}</p>
+                  <h6>{{photo.date}}</h6>
+                  <div class="d-grid gap-2">
+                      <a href="{{photo.get_absolute_url}}" class="btn btn-outline-primary button">view</a>
+                  </div>
+              </div>
+            </div>
+    </div>
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}

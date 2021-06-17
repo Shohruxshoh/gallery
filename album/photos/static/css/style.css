@@ -1,0 +1,6 @@
+.container .row .btn{
+    outline: none;
+}
+.container .row .btn .button{
+    width: 100%;
+}

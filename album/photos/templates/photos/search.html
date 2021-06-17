@@ -1,0 +1,24 @@
+{% extends 'photos/base.html' %}
+{% block title %} {{query.title}} {% endblock %}
+{% block content %}
+<div class="container mt-5" >
+  <div class="row">
+       {% for photo in search_obj %}
+    <div class="col-6">
+            <div class="card">
+                <img src="{{photo.image.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h4 class="card-title">Pic name: {{photo.title}}</h4>
+                <p class="card-text">Category: {{photo.category}}</p>
+                <p class="card-text">{{photo.description}}</p>
+                  <h5>{{photo.date}}</h5>
+                  <div class="d-grid gap-2">
+                      <a href="{{photo.get_absolute_url}}" class="btn btn-outline-primary button">view</a>
+                  </div>
+              </div>
+            </div>
+    </div>
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}
