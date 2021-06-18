@@ -23,7 +23,6 @@ class Photos(models.Model):
     category = models.ForeignKey(Category, on_delete=CASCADE)
     image = models.ImageField()
     title = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
 

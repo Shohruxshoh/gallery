@@ -12,5 +12,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Photos)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['category', 'title', 'slug', 'image', 'date']
-    prepopulated_fields = {'slug': ('title',)}
+    list_display = ['category', 'title', 'image', 'date']

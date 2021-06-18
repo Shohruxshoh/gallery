@@ -28,7 +28,7 @@ def category_list(request, slug=None):
 def search_result(request):
     query = request.GET.get('search')
     search_obj = Photos.objects.filter(
-        Q(title__icontains=query) | Q(category__icontains=query)
+        Q(title__icontains=query) | Q(description__icontains=query)
     )
     context = {'search_obj': search_obj, 'query': query}
     return render(request, 'photos/search.html', context)
