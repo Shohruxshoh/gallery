@@ -35,6 +35,6 @@ def search_result(request):
 
 
 def post_detail(request, pk):
-    photos = Photos.objects.get(id=pk)
-    context = {'photo': photos}
+    photo = Photos.objects.get(id=pk)
+    context = {'photo': photo}
     return render(request, 'photos/detail.html', context)
